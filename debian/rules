@@ -8,4 +8,4 @@ override_dh_systemd_start:
 	    debian/sshd@.service
 
 %:
-	dh $@ --with=systemd --with=yang
+	dh $@ --with yang

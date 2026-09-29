@@ -1,9 +1,14 @@
 Source: vyatta-service-ssh
-Section: contrib/net
+Section: net
 Priority: optional
-Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
-Build-Depends: cpio, debhelper (>= 9), debhelper (>= 9.20160709) | dh-systemd (>= 1.5), dh-yang
-Standards-Version: 3.9.6
+Maintainer: NuDanOS Maintainers <jon@fernandez.tech>
+Build-Depends: debhelper-compat (= 13),
+ cpio,
+ dh-yang
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/nudanos/vyatta-service-ssh.git
+Vcs-Browser: https://github.com/nudanos/vyatta-service-ssh
 
 Package: vyatta-service-ssh
 Architecture: any
@@ -37,4 +42,3 @@ Conflicts: vyatta-cfg-system (<< 2.0)
 Replaces: vyatta-cfg-system (<< 2.0)
 Description: vyatta-service-ssh-routing-instance-v1 module
  routing-instance SSH configuration
-
