@@ -47,7 +47,7 @@ my $vrf  = get_interface_vrf($dev);
 if ( $vrf && $vrf ne $VRFNAME_DEFAULT ) {
     $file       = "$VRF_DIR/$vrf/$BASE_NAME";
     $file_found = ( -f $file ) ? 1 : 0;
-    $svc        = 'sshd@' . $vrf;
+    $svc        = 'vyatta-sshd@' . $vrf;
 }
 exit 0 unless $file_found;
 

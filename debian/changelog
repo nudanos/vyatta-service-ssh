@@ -1,3 +1,11 @@
+vyatta-service-ssh (0.26) trixie; urgency=medium
+
+  * Rename the routing-instance unit sshd@.service to vyatta-sshd@.service:
+    openssh-server 10 ships its own sshd@.service (per-connection socket
+    activation), and the two packages could not be installed together.
+
+ -- NuDanOS Maintainers <jon@fernandez.tech>  Fri, 02 Oct 2026 09:39:48 -0700
+
 vyatta-service-ssh (0.25) trixie; urgency=medium
 
   * Port to Debian 13 (trixie): debhelper-compat 13, Standards-Version 4.7.2, Rules-Requires-Root, NuDanOS Vcs.

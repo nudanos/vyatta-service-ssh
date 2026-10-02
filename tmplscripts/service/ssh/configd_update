@@ -31,7 +31,7 @@ case $action in
     delete)
         if [[ "$VRFName" != "default" ]]; then
             rm -f /run/ssh/vrf/$VRFName/listen_addresses &> /dev/null
-            systemctl stop sshd@${VRFName}.service
+            systemctl stop vyatta-sshd@${VRFName}.service
             rm -f /run/ssh/vrf/$VRFName/sshd_config &> /dev/null
         else
             rm -f /run/ssh/listen_addresses &> /dev/null
@@ -59,7 +59,7 @@ case $action in
 
             echo "SSHD_CONF_FILE=-f /run/ssh/vrf/$VRFName/sshd_config" > /run/ssh/vrf/$VRFName/${VRFName}.env
             echo "VRFName=$VRFName" >> /run/ssh/vrf/$VRFName/${VRFName}.env
-            systemctl reload-or-restart sshd@${VRFName}.service
+            systemctl reload-or-restart vyatta-sshd@${VRFName}.service
         else
             vyatta-update-ssh.pl --update=/etc/ssh/sshd_config
             # sshd can run, as update also removed /etc/ssh/sshd_not_to_be_run
